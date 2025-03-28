@@ -1,0 +1,9 @@
+.nav {
+    color: white;
+    mix-blend-mode: difference;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background-color: transparent;
+    background-color: none;
+}
