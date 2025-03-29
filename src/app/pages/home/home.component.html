@@ -2,5 +2,25 @@
 <app-featured></app-featured>
 
 <section class="posts">
+
     <h1>Posts!</h1>
+
+    <div class="row">
+
+        @for(post of arrPosts; track $index){
+        <div class="col-12 col-md-8 col-lg-4 card text-bg-dark">
+            <img id="cardback" src="{{post.imageUrl}}">
+            <div class="card-img-overlay">
+                <span>{{post.publicationDate | date: 'EEEE, MMMM d, y'}}</span>
+                <h4 class="card-title">{{post.author}}</h4>
+                <h2 class="card-title">{{post.title}}</h2>
+                <hr>
+                <p class="card-text">{{post.brief}}</p>
+                <p class="cat card-text">{{post.category.title}}</p>
+            </div>
+        </div>
+        }
+
+    </div>
+
 </section>

@@ -1,4 +1,44 @@
 .posts {
     background-color: #144F4F;
-    height: 100vh;
+
+    .row {
+        justify-content: center;
+        gap: 50px;
+    }
+
+    div.card.text-bg-dark {
+
+        min-width: 250px;
+        max-width: 400px;
+        height: 450px;
+        border: none;
+        transition: 1s;
+
+        #cardback {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+        }
+    }
+
+    div {
+        align-content: end;
+        text-align: end;
+
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0) 20%, #144F4F);
+
+        .cat {
+            font-weight: bold;
+            background-color: rgba(99, 132, 96, 0.5);
+            padding: 4px 10px;
+        }
+    }
 }
