@@ -1,9 +1,83 @@
-.nav {
-    color: white;
-    mix-blend-mode: difference;
-    position: sticky;
+header {
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 9999;
-    background-color: transparent;
-    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    mix-blend-mode: difference;
+}
+
+/* #logo {
+    background-image: url('../../../../assets/images/logotravel.svg');
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+} */
+
+nav.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    margin: 20px;
+}
+
+nav.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+nav.nav ul li {
+    cursor: pointer;
+
+}
+
+nav.nav ul li:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 780px) {
+    nav.nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        gap: 15px;
+        border-radius: 8px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active+ul {
+        display: flex;
+    }
 }
