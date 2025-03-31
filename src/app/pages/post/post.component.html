@@ -1,1 +1,24 @@
-<p>post works!</p>
+<div class="postcard">
+    @if (post){
+
+    <h2>{{post.title}}</h2>
+    <h3>{{post.author}}</h3>
+
+    <p>{{post.brief}}</p>
+    <figure>
+        <img src="{{post.imageUrl}}" alt="imagen de viaje">
+    </figure>
+
+    <span>{{post.publicationDate | date: 'EEEE, MMMM d, y'}}</span>
+
+    <hr>
+    <p class="post-text">{{post.text}}</p>
+
+    <h6>{{post.category}}</h6>
+
+    }@else{
+
+    <h3>No existe post con este ID</h3>
+
+    }
+</div>

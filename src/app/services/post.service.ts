@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post.interface';
 import { posts } from '../db/posts';
-import { Category } from '../interfaces/category.interface';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,7 @@ export class PostService {
     return posts;
   }
 
-  getByCat(category: Category): Post[] {
-    // El ID de la categoría que se desea buscar.
+  getByCat(category: string): Post[] {
     // Retorna un array de posts cuya categoría coincida con la categoría dada.
     return posts.filter(post => post.category === category);
   }
@@ -25,8 +24,19 @@ export class PostService {
     return posts.filter(post => post.title.toLowerCase().includes(text.toLowerCase()));
   }
 
-  create(newPost: Post) {
-    posts.push(newPost);
-  }//creamos un nuevo post y lo metemos en el array de posts.
+  getById(id: number): Post | undefined {
+    return posts.find(post => post.id === id);
+  }
 
+  addPost(newPost: Omit<Post, 'id' | 'date'>): Observable<Post> {
+    const lastId = posts.length > 0 ? posts[posts.length - 1].id : 0;
+    const newId = lastId + 1;
+    const postWithIdAndDate: Post = {
+      ...newPost,
+      id: newId,
+      publicationDate: new Date()
+    };
+    posts.push(postWithIdAndDate);
+    return of(postWithIdAndDate);
+  }
 }

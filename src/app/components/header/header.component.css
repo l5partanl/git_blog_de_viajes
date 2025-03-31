@@ -7,16 +7,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 0px 30px;
     mix-blend-mode: difference;
 }
-
-/* #logo {
-    background-image: url('../../../../assets/images/logotravel.svg');
-    background-size: cover;
-    height: 50px;
-    width: 50px;
-} */
 
 nav.nav {
     display: flex;
@@ -38,11 +31,19 @@ nav.nav ul {
 
 nav.nav ul li {
     cursor: pointer;
-
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav.nav ul li:hover {
     text-decoration: underline;
+}
+
+nav.nav ul li.activo {
+    border-bottom: 3px solid lightgreen;
+    background-color: black;
+    color: white;
 }
 
 .menu-toggle {

@@ -16,6 +16,12 @@ export class HomeComponent {
 
   arrPosts: Post[] = [];
 
+  arrCategories: string[] = [];
+
+  ngAfterViewInit() {
+    this.arrCategories = [...new Set(this.arrPosts.map(post => post.category))];
+  }
+
   postService = inject(PostService)
 
   ngOnInit() {
@@ -28,4 +34,15 @@ export class HomeComponent {
     console.log(this.arrPosts)
   }
 
+  onChange($event: any) {
+    if ($event.target.value === "Sin filtros") {
+      this.arrPosts = this.postService.getAll();
+    } else {
+      this.arrPosts = this.postService.getByCat($event.target.value);
+    }
+  }
+
+  redirectToPost(id: number) {
+    window.location.href = `/post/${id}`;
+  }
 }

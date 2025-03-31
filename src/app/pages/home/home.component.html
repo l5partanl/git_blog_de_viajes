@@ -3,12 +3,20 @@
 
 <section class="posts">
 
-    <h1>Posts!</h1>
+    <h3>Posts</h3>
+
+    <div class="select my-3 col-12 col-md-8 col-lg-4">
+        <select class="form-select" (change)="onChange($event)">
+            <option>Sin filtros</option>
+            @for (cat of arrCategories; track $index){
+            <option>{{cat}}</option>
+            }
+        </select>
+    </div>
 
     <div class="row">
-
         @for(post of arrPosts; track $index){
-        <div class="col-12 col-md-8 col-lg-4 card text-bg-dark">
+        <div class="col-12 col-md-8 col-lg-4 card text-bg-dark" (click)="redirectToPost(post.id)">
             <img id="cardback" src="{{post.imageUrl}}">
             <div class="card-img-overlay">
                 <span>{{post.publicationDate | date: 'EEEE, MMMM d, y'}}</span>
@@ -16,7 +24,7 @@
                 <h2 class="card-title">{{post.title}}</h2>
                 <hr>
                 <p class="card-text">{{post.brief}}</p>
-                <p class="cat card-text">{{post.category.title}}</p>
+                <p class="cat card-text">{{post.category}}</p>
             </div>
         </div>
         }

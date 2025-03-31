@@ -1,18 +1,39 @@
 .posts {
-    background-color: #144F4F;
+    padding: 5%;
+
+    h3 {
+        text-align: center;
+        font-size: 2rem;
+        color: #fff;
+        background-color: #62968b;
+        padding: 10px;
+        border-radius: 10px;
+    }
 
     .row {
         justify-content: center;
+        /* justify-content: space-between; */
         gap: 50px;
+        background-color: #62968b;
+        padding: 20px;
+        border-radius: 10px;
     }
 
-    div.card.text-bg-dark {
+    .select {
+        margin: 0 auto;
+        border: 8px solid #62968b;
+        border-radius: 10px;
+    }
 
+
+    div.card.text-bg-dark {
         min-width: 250px;
         max-width: 400px;
         height: 450px;
         border: none;
+        border-radius: 10px;
         transition: 1s;
+
 
         #cardback {
             width: 100%;
@@ -21,6 +42,8 @@
             position: absolute;
             top: 0;
             left: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         &:hover {

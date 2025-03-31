@@ -1,1 +1,39 @@
-<p>new works!</p>
+<div class="postcard">
+
+    <h2>Nuevo Post</h2>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+            <label class="form-label">Titulo del post</label>
+            <input type="text" class="form-control" formControlName="title">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Resumen del viaje</label>
+            <input type="text" class="form-control" formControlName="brief">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nombre del autor</label>
+            <input type="text" class="form-control" formControlName="author">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Sube una foto (url)</label>
+            <input type="text" class="form-control" formControlName="imageUrl">
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Categoría</label>
+            <select class="form-select" formControlName="category">
+                <option></option>
+            </select>
+
+        </div>
+
+
+        <button class="btn btn-primary" type="Submit">Registrar post</button>
+    </form>
+</div>
