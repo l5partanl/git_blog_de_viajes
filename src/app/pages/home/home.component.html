@@ -1,34 +1,57 @@
-<app-hero></app-hero>
-<app-featured></app-featured>
 
+    <div class="hero page">
+        <div id="logo"></div>
+        <div class="keyart" id="parallax">
+        <h2 lass="keyart_layer">▼</h2>
+        <div class="keyart_layer" id="keyart-6"></div>
+        <div class="keyart_layer" id="keyart-5"></div>
+        <div class="keyart_layer" id="keyart-4"></div>
+        <div class="keyart_layer" id="keyart-3"></div>
+        <div class="keyart_layer" id="keyart-2"></div>
+        <div class="keyart_layer" id="keyart-1"></div>
+    </div>
+
+    <div class="overflow">
+        <h1>Blog de viajes</h1>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolorem repellendus laborum repudiandae? Unde
+            odit corrupti labore voluptatum atque, earum distinctio esse debitis omnis dolorem, temporibus eveniet amet
+            beatae quod? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora consectetur maxime sapiente
+            magnam id voluptas incidunt velit, quos atque placeat, voluptate odit praesentium nihil sequi quam quia,
+            adipisci laboriosam. Repellat!
+        </p>
+    </div>
+
+    
 <section class="posts">
-
+    
     <h3>Posts</h3>
-
+    
     <div class="select my-3 col-12 col-md-8 col-lg-4">
         <select class="form-select" (change)="onChange($event)">
             <option>Sin filtros</option>
             @for (cat of arrCategories; track $index){
-            <option>{{cat}}</option>
+                <option>{{cat}}</option>
             }
         </select>
     </div>
 
     <div class="row">
         @for(post of arrPosts; track $index){
-        <div class="col-12 col-md-8 col-lg-4 card text-bg-dark" (click)="redirectToPost(post.id)">
-            <img id="cardback" src="{{post.imageUrl}}">
-            <div class="card-img-overlay">
-                <span>{{post.publicationDate | date: 'EEEE, MMMM d, y'}}</span>
-                <h4 class="card-title">{{post.author}}</h4>
-                <h2 class="card-title">{{post.title}}</h2>
-                <hr>
-                <p class="card-text">{{post.brief}}</p>
-                <p class="cat card-text">{{post.category}}</p>
+            <div class="col-12 col-md-8 col-lg-4 card text-bg-dark" (click)="redirectToPost(post.id)">
+                <img id="cardback" src="{{post.imageUrl}}">
+                <div class="card-img-overlay">
+                    <span>{{post.publicationDate | date: 'EEEE, MMMM d, y'}}</span>
+                    <h4 class="card-title">{{post.author}}</h4>
+                    <h2 class="card-title">{{post.title}}</h2>
+                    <hr>
+                    <p class="card-text">{{post.brief}}</p>
+                    <p class="cat card-text">{{post.category}}</p>
+                </div>
             </div>
-        </div>
         }
-
+        
     </div>
 
 </section>
+</div>
