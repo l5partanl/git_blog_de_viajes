@@ -1,8 +1,7 @@
-
-    <div class="hero page">
-        <div id="logo"></div>
-        <div class="keyart" id="parallax">
-        <h2 lass="keyart_layer">▼</h2>
+<div class="hero page">
+    <div id="logo"></div>
+    <div class="keyart" id="parallax">
+        <!--         <h2 lass="keyart_layer">▼</h2> -->
         <div class="keyart_layer" id="keyart-6"></div>
         <div class="keyart_layer" id="keyart-5"></div>
         <div class="keyart_layer" id="keyart-4"></div>
@@ -22,22 +21,78 @@
         </p>
     </div>
 
-    
-<section class="posts">
-    
-    <h3>Posts</h3>
-    
-    <div class="select my-3 col-12 col-md-8 col-lg-4">
-        <select class="form-select" (change)="onChange($event)">
-            <option>Sin filtros</option>
-            @for (cat of arrCategories; track $index){
-                <option>{{cat}}</option>
-            }
-        </select>
+    <div id="reviewCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="card text-center" style="width: 28rem;">
+                        <img class="card-img-top" style="height: 200px; object-fit: cover;"
+                            src="https://cdn.outsideonline.com/wp-content/uploads/2018/06/26/baja-reader-photo-lead_h.jpg"
+                            alt="Review Image">
+                        <div class="card-body">
+                            <h5 class="card-title">John Doe</h5>
+                            <p class="card-text">Amazing blog! I found so many useful tips for my next trip.</p>
+                            <span class="text-muted">January 15, 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="card text-center" style="width: 28rem;">
+                        <img class="card-img-top" style="height: 200px; object-fit: cover;"
+                            src="https://dailywildlifephoto.nathab.com/photography-guide/wp-content/uploads/2016/05/alaska-1.jpg"
+                            alt="Review Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Jane Smith</h5>
+                            <p class="card-text">Beautifully written articles with stunning photos. Highly recommended!
+                            </p>
+                            <span class="text-muted">February 10, 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="card text-center" style="width: 28rem;">
+                        <img class="card-img-top" style="height: 200px; object-fit: cover;"
+                            src="https://travelnevada.com/wp-content/uploads/2021/03/Spring-Mt-Ranch-Fam-MerrillsOnTheMove-Hero.jpg"
+                            alt="Review Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Emily Johnson</h5>
+                            <p class="card-text">This blog inspired me to explore new destinations. Thank you!</p>
+                            <span class="text-muted">March 5, 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
-    <div class="row">
-        @for(post of arrPosts; track $index){
+
+    <section class="posts">
+
+        <h3>Posts</h3>
+
+        <div class="select my-3 col-12 col-md-8 col-lg-4">
+            <select class="form-select" (change)="onChange($event)">
+                <option>Sin filtros</option>
+                @for (cat of arrCategories; track $index){
+                <option>{{cat}}</option>
+                }
+            </select>
+        </div>
+
+        <div class="row">
+            @for(post of arrPosts; track $index){
             <div class="col-12 col-md-8 col-lg-4 card text-bg-dark" (click)="redirectToPost(post.id)">
                 <img id="cardback" src="{{post.imageUrl}}">
                 <div class="card-img-overlay">
@@ -49,9 +104,10 @@
                     <p class="cat card-text">{{post.category}}</p>
                 </div>
             </div>
-        }
-        
-    </div>
+            }
 
-</section>
+        </div>
+
+    </section>
+
 </div>
